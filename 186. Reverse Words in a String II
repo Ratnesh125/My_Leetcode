@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+//reverse word
+
+#include <bits/stdc++.h>
+using namespace std;
+void reverse(string &str,int st,int en){
+    while(st<en){
+        int temp =str[st];
+        str[st]=str[en];
+        str[en]=temp;
+        st++;
+        en--;
+    }  
+//   cout<< str;
+}
+int main() {
+    string s={ 't',' ','e',' ','s','k','y',' ','i','s',' ','b', 'l', 'u', 'e'};
+    int start=0;
+    int end=1;
+    int size=s.size();
+    while(end<size+1){
+        if(s[end]==' ' || s[end]=='\0'){
+            reverse(s,start,end-1);
+            start=end+1;
+            end=start+1;
+        }
+        else{
+            end++;
+        }
+    }
+   cout<<s;
+    return 0;
+} 
