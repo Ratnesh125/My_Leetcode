@@ -28,7 +28,7 @@ void toLowerCase(char &ch)
 }
     bool isPalindrome(string s) {
         remove(s);
-
+ 
     for (int i = 0; i < s.size(); i++)
     {
 
