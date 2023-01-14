@@ -1,0 +1,110 @@
+class Solution {
+public:
+    bool isValidSudoku(vector<vector<char>>& nums) {
+        for(int i=0;i<9;i++){
+            for(int j=0;j<9;j++){
+                if(nums[i][j]=='.'){
+                        continue;
+                    }
+                for(int k=0;k<9;k++){                    
+                    if(nums[i][j]==nums[k][j] && i!=k  ){
+                        return false;
+                    }
+                    if(nums[i][j]==nums[i][k] && j!=k){
+                        return false;             
+                    }
+                }
+                if(i<3 && j<3){
+                    for(int l=0;l<3;l++){
+                        for(int m=0;m<3;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i<3 && j>2 && j<6){
+                    for(int l=0;l<3;l++){
+                        for(int m=3;m<6;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i<3 && j>5 && j<9){
+                    for(int l=0;l<3;l++){
+                        for(int m=6;m<9;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i>2 && i<6 && j<3){
+                    for(int l=3;l<6;l++){
+                        for(int m=0;m<3;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i>2 && i<6 && j>2 && j<6){
+                    for(int l=3;l<6;l++){
+                        for(int m=3;m<6;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i>2 && i<6 && j>5 && j<9){
+                    for(int l=3;l<6;l++){
+                        for(int m=6;m<9;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i>5 && i<9 && j<3){
+                    for(int l=6;l<9;l++){
+                        for(int m=0;m<3;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i>5 && i<9 && j>2 && j<6){
+                    for(int l=6;l<9;l++){
+                        for(int m=3;m<6;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+                else
+                if(i>5 && i<9 && j>5 && j<9){
+                    for(int l=6;l<9;l++){
+                        for(int m=6;m<9;m++){
+                            if(nums[i][j]==nums[l][m] && i!=l && j!=m){
+                        return false;             
+                            }
+                        }
+                    }
+                }
+            }    
+        }
+        return true;
+    }
+};
