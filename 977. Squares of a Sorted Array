@@ -10,8 +10,6 @@ public:
         
     }
 };
-*/
-
 class Solution {
 public:
    static vector<int> sortedSquares(vector<int> nums)
