@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     bool detectCapitalUse(string nums) {
         int n=nums.size();
         if(nums[0]>='A' && nums[0]<='Z' && nums[1]>='a' && nums[0]<='z' ){
@@ -17,7 +16,6 @@ public:
                 }
             }
         } 
-    
     else if(nums[0]>='a' && nums[0]<='z' ){
             for(int i=1;i<n;i++){
                 if(nums[i]<'a' || nums[i]>'z'){
