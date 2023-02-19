@@ -11,7 +11,7 @@ public:
             else if(curr_sum>max_sum){
                 max_sum=curr_sum;
             }   
-        }
+        } 
     return max_sum;
     }
 };
