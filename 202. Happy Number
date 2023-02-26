@@ -1,0 +1,23 @@
+class Solution {
+public:
+int count =0;
+    bool isHappy(int n) {
+        if(count >100){
+            return false;
+        }
+        long long sum=0;
+        while(n>0){
+            int k =n%10;
+            sum=sum+(k*k);
+            cout<<sum<<endl;
+            n/=10;
+        }
+        if(sum==1){
+            cout<<"hi";
+            return true;
+            cout<<"hi";
+        }
+            count++;
+            return isHappy(sum);
+    }
+};
