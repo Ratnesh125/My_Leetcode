@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool isPalindrome(int n) {
+        if(n<0){
+            return false;
+        }
+        vector<int>s;
+        while(n!=0){
+            s.push_back(n%10);
+            n/=10;
+        }
+        int st=0;
+        int end=s.size()-1;
+        while(st<=end){
+            if(s[st]!=s[end]){
+                return false;
+            }
+            st++;
+            end--;
+        }
+        return true;
+    }
+};
