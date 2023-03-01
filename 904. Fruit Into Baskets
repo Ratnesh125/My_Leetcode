@@ -1,0 +1,51 @@
+class Solution {
+public:
+    int totalFruit(vector<int>& fruits) {
+        int num1=0;
+        int num2=INT_MIN;
+        int ans=1;
+        int final_ans=0;
+        int cnt=0;
+        int start=0;
+        int temp=0;
+        unordered_set<int>s;
+        for(int i=0;i<fruits.size();i++){
+            s.insert(fruits[i]);
+        }
+        if(s.size()<3){
+            return fruits.size();
+        }
+       
+        while(start<fruits.size()){
+            
+            num1=fruits[start];
+            for(int i=start+1;i<fruits.size();i++){
+                if(fruits[i]==num1 || fruits[i]==num2){
+                    ans++;
+                }
+                else
+                if(fruits[i]!=num1 && cnt==0){
+                    temp=i;
+                    ++cnt;
+                    ans++;
+                    num2=fruits[i];
+                    
+                }
+                else{
+                    break;
+                }       
+            }
+            if(ans>final_ans){
+                final_ans=ans;
+            }
+            ans=1;
+            if(num2!=INT_MIN){
+            start=temp;
+            }
+            else{start++;}
+            num2=INT_MIN;
+            cnt=0;
+        }
+        return final_ans;
+    }
+};
