@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string getHint(string secret, string guess) {
+    string getHint(string secret, string guess){
         int count=0;
         int bull=0;
         int cow=0;
