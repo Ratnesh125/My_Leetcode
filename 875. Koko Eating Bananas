@@ -1,0 +1,34 @@
+class Solution {
+public:
+        long long min_hr(vector<int>& nums,int mid){
+            long long hr=0;
+            for(int i=0;i<nums.size();i++){
+                if(nums[i]%mid>0){
+                    hr=hr+(nums[i]/mid)+1;
+                }
+                else{
+                    hr=hr+nums[i]/mid;
+                }
+            }
+            return hr;
+        }
+    int minEatingSpeed(vector<int>& nums, int h) {
+        int min = 1;
+        int maxi=0;
+        int ans=0;
+        for(int i=0;i<nums.size();i++){
+            maxi=max(maxi,nums[i]);
+        }
+        long long mid;
+        while(min<=maxi){
+            mid = (min + maxi)/2;
+            long long fun=min_hr(nums,mid);
+             if (fun <= h){
+                ans = mid; 
+                maxi = mid - 1;
+            }
+            else min = mid + 1;
+        }
+        return ans;
+    }
+};
