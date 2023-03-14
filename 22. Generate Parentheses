@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<string> generateParenthesis(int n) {
+        vector<string>ans;
+        func(ans,0,0,n,"");
+        return ans;
+    }
+    void func(vector<string>&ans,int open,int close,int n,string curr_str){
+        if(curr_str.size()==n*2){
+            ans.push_back(curr_str);
+            return ;
+        }
+        if(open<n){func(ans,open+1,close,n,curr_str+"(");}
+        if(close<open){func(ans,open,close+1,n,curr_str+")");}
+    }
+};
